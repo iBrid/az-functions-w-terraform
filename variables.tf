@@ -10,12 +10,12 @@ variable "location" {
 
 variable "storage_account_name" {
   type    = string
-  default = "azfctn-storageacct0224"
+  default = "functnstorageacct0224"
 }
 
 variable "storage_container_name" {
   type    = string
-  default = "azfctn-container"
+  default = "azfctncontainer"
 }
 
 variable "function_app_name" {
