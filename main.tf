@@ -20,19 +20,19 @@ resource "azurerm_storage_container" "container" {
 }
 
 resource "azurerm_app_service" "appservice" {
-    name                = var.app_service_plan_name
-    location            = var.location
-    resource_group_name = var.resource_group_name
-    app_service_plan_id = var.app_service_plan_name.id
-    tags                = var.tags
+  name                = var.app_service_plan_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  app_service_plan_id = var.app_service_plan_name.id
+  tags                = var.tags
 }
 
 resource "azurerm_function_app" "name" {
-  location =  var.location
-  name = var.function_app_name
-  resource_group_name = var.resource_group_name
-  storage_account_name = var.storage_account_name
-  app_service_plan_id = var.app_service_plan_name.id
+  location                   = var.location
+  name                       = var.function_app_name
+  resource_group_name        = var.resource_group_name
+  storage_account_name       = var.storage_account_name
+  app_service_plan_id        = var.app_service_plan_name.id
   storage_account_access_key = azurerm_storage_account.stg.primary_access_key
-  version = var.runtime_version
+  version                    = var.runtime_version
 }
